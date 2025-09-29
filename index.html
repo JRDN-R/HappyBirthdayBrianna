@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"
+  style="
+    height:100%;
+    margin:0;
+    padding:0;
+    background:
+      url('https://raw.githubusercontent.com/JRDN-R/HappyBirthdayBrianna/refs/heads/main/background-ht.png')
+      no-repeat center center fixed;
+    background-size:cover;
+  ">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Redirecting…</title>
+
+  <!-- delayed redirect after 5 seconds -->
+  <meta http-equiv="refresh"
+        content="5; url=https://www.amazon.com/gp/r.html?C=32CVHSUH1WNEZ&amp;M=urn:rtn:msg:202509292151204c4686fcaab840cfa9732279de10p0na&amp;R=3TRL2L15YOP0I&amp;T=C&amp;U=https%3A%2F%2Fwww.amazon.com%2Fg%2FF7NJU4SU59KK98%3Fref_%3Dpe_120899690_1025545470_TC0301BT_TC03&amp;H=Q3AWEQGB3B0TPJTR0PZJALS484MA&amp;ref_=pe_120899690_1025545470_TC0301BT_TC03" />
+
+  <!-- Corporative Alt font -->
+  <link href="https://fonts.cdnfonts.com/css/corporative-alt" rel="stylesheet">
+
+  <style>
+    /* safe-area + full-screen centering */
+    body {
+      margin: 0;
+      padding: env(safe-area-inset-top)
+               env(safe-area-inset-right)
+               env(safe-area-inset-bottom)
+               env(safe-area-inset-left);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+
+    /* keyframe for the moving stripes */
+    @keyframes loading {
+      0%   { transform: translateX(25px); }
+      100% { transform: translateX(-20px); }
+    }
+
+    /* full-width, bottom-fixed loading bar */
+    button.loading {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      font-family: 'Corporative Alt', sans-serif;
+      font-weight: 900;
+      font-size: 24px;
+      color: black;
+      background: #FFE366;
+      cursor: default;
+      transform: translateZ(0); /* for smoother animation */
+    }
+
+    /* the animated stripe overlay */
+    button.loading::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 300%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        60deg,
+        transparent,
+        transparent 10px,
+        #FAC835 10px,
+        #FAC835 20px
+      );
+      animation: loading 1s infinite linear;
+      z-index: 1;
+    }
+
+    /* ensure text stays on top */
+    button.loading > span {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- full-width loading bar -->
+  <button class="loading">
+    <span>Please wait...</span>
+  </button>
+</body>
+</html>
